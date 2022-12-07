@@ -20,22 +20,6 @@ const (
 	RpsLoss RpsResult = 0
 )
 
-func CheckRpsRound(opponent RpsSign, you RpsSign) RpsResult {
-	if opponent == you {
-		return RpsDraw
-	}
-	if opponent > you {
-		if opponent == ScissorsSign && you == RockSign {
-			return RpsWin
-		}
-		return RpsLoss
-	}
-	if opponent == RockSign && you == ScissorsSign {
-		return RpsLoss
-	}
-	return RpsWin
-}
-
 func mapOpponentSign(key byte) RpsSign {
 	switch key {
 	case 'A':
